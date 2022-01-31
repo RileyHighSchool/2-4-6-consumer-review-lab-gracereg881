@@ -86,7 +86,7 @@ public class Review {
   /**
    * @returns the sentiment value of word as a number between -1 (very negative) to 1 (very positive sentiment) 
    */
-  public static double sentimentVal( String word )
+  public static double sentimentVal(String word)
   {
     try
     {
