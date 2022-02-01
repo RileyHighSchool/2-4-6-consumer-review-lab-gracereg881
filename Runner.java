@@ -7,6 +7,6 @@ public class Runner {
 
         double num = Review.sentimentVal("warm");
 
-        System.out.println(Review.totalSentiment(fileName));
+        //System.out.println(Review.totalSentiment(fileName));
     }
 }
