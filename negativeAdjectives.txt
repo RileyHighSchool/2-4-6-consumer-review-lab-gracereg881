@@ -1,1 +1,10 @@
- 
+ aggressive
+ boring
+ stale
+ nasty
+ rancid
+ bland
+ tasteless
+ inedible
+ rotten
+ rubbery

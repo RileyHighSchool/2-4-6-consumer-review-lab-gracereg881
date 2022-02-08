@@ -1,4 +1,7 @@
 public class Runner {
+
+    // runner and main are the same, Main is the runner used during E Learning days
+    // will probably just continue to use Main 
     
 
     public static void main(String[] args)
