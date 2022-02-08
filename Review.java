@@ -115,7 +115,62 @@ public class Review {
     total += sentimentVal(review);
     return total;
   }
+
+  public static int starRating(String fileName){
+    // get total sentiment
+    double sentiment = totalSentiment(fileName);
+    // check total sentiment against thresholds
+    // return appropriate number of stars
+    if (sentiment >= 21)
+    {
+      return 5;
+    }
+    else if (sentiment > 10)
+    {
+      return 4;
+    }
+    else if (sentiment > 0)
+    {
+      return 3;
+    }
+    else if (sentiment > -10)
+    {
+      return 2;
+    }
+    else
+    {
+      return 1;
+    }
+
+
+}
   
+public static String fakeReview(String fileName)
+{
+  // get the review in a string
+  String review = textToString(fileName);
+
+  // empty string for new string
+  String newReview = "";
+  // loop through the string
+  while (review.indexOf("*") > 0 && review.length() > 0)
+  {
+    // look for *s
+    int starLoc = review.indexOf("*");
+    // add everything before the * to new review
+    newReview += review.substring(0, starLoc);
+    // add a random adjective to new review
+    newReview += randomAdjective();
+    // cut off old review through starred adjective
+    int spaceAfterStar = review.indexOf(" ", starLoc);
+    review = review.substring(spaceAfterStar);
+  }
+  newReview += review;
+
+  return newReview;
+
+}
+
   /**
    * Returns the ending punctuation of a string, or the empty string if there is none 
    */
