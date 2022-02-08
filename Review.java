@@ -1,4 +1,7 @@
 import java.util.Scanner;
+
+import javax.lang.model.util.ElementScanner14;
+
 import java.io.File;
 import java.util.HashMap;
 import java.util.ArrayList;
@@ -145,7 +148,7 @@ public class Review {
 
 }
   
-public static String fakeReview(String fileName)
+public static String fakeReview(String fileName, String posNeg)
 {
   // get the review in a string
   String review = textToString(fileName);
@@ -158,6 +161,18 @@ public static String fakeReview(String fileName)
     // look for *s
     int starLoc = review.indexOf("*");
     // add everything before the * to new review
+    if (posNeg.toLowerCase().equals("positive"))
+    {
+      newReview += randomPositiveAdj();
+    }
+    else if (posNeg.toLowerCase().equals("negative"))
+    {
+      newReview += randomNegativeAdj();
+    }
+    else 
+    {
+      newReview += randomAdjective();
+    }
     newReview += review.substring(0, starLoc);
     // add a random adjective to new review
     newReview += randomAdjective();
