@@ -250,4 +250,23 @@ public static String fakeReview(String fileName, String posNeg)
       return randomNegativeAdj();
     }
   }
+
+
+  public static String textLingo(String fileName)
+  {
+    //get text into a string
+    String text = textToString(fileName);
+
+    // empty string for new string
+    String newText = "";
+
+    // loop through the string
+    while (text.indexOf(" k ") > 0 && text.length() > 0)
+    {
+      // look for k
+      int kLoc = text.indexOf(" k ");
+
+      // add everything before "k" to the review
+    }
+  }
 }
