@@ -11,8 +11,10 @@ public class Main {
 
         //double num = Review.sentimentVal("warm");
 
-        System.out.println(Review.totalSentiment("SimpleReview.txt"));
+        //System.out.println(Review.totalSentiment("SimpleReview.txt"));
 
-        System.out.println(Review.starRating("SimpleReview.txt"));
+        //System.out.println(Review.starRating("SimpleReview.txt"));
+
+        System.out.println(Review.textLingo("SimpleText.txt"));
     }
 }

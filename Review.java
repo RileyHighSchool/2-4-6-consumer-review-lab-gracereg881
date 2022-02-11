@@ -40,7 +40,7 @@ public class Review {
       Scanner input = new Scanner(new File("positiveAdjectives.txt"));
       while(input.hasNextLine()){
         String temp = input.nextLine().trim();
-        System.out.println(temp);
+        // System.out.println(temp);
         posAdjectives.add(temp);
       }
       input.close();
@@ -253,7 +253,7 @@ public static String fakeReview(String fileName, String posNeg)
 
 
   public static String textLingo(String fileName)
-  {
+    {
     //get text into a string
     String text = textToString(fileName);
 
@@ -261,12 +261,27 @@ public static String fakeReview(String fileName, String posNeg)
     String newText = "";
 
     // loop through the string
-    while (text.indexOf(" k ") > 0 && text.length() > 0)
+    while (text.indexOf("k ") > 0 && text.length() > 0)
     {
       // look for k
-      int kLoc = text.indexOf(" k ");
+      int kLoc = text.indexOf("k ");
 
-      // add everything before "k" to the review
+      String isK = text.substring(0, kLoc);
+
+      // check if text is "k + something", change to okay + something
+      if (text.equals("k"))
+      {
+        newText += "okay";
+      }
+
+      // check if just "k", change to okay
+      else if (isK.equals("k "))
+      {
+        newText += "okay";
+      }
+    // if not, keep orginal text
     }
-  }
+
+    return newText;
+  }    
 }
