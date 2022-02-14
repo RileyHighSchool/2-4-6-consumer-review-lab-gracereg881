@@ -251,7 +251,7 @@ public static String fakeReview(String fileName, String posNeg)
     }
   }
 
-
+// maggie was my partner and helped me with this
   public static String textLingo(String fileName)
     {
     //get text into a string
