@@ -266,22 +266,26 @@ public static String fakeReview(String fileName, String posNeg)
       // look for k
       int kLoc = text.indexOf("k ");
 
-      String isK = text.substring(0, kLoc);
+      String isK = text.substring(kLoc, kLoc+2);
 
+      String beforeK = text.substring(0, kLoc);
+
+      newText += beforeK;
       // check if text is "k + something", change to okay + something
-      if (text.equals("k"))
+      if (isK.equals("k "))
       {
-        newText += "okay";
+        newText += "okay ";
+      }
+      else {
+        newText += isK;
       }
 
-      // check if just "k", change to okay
-      else if (isK.equals("k "))
-      {
-        newText += "okay";
-      }
+      text = text.substring(kLoc);
+      
     // if not, keep orginal text
     }
 
+    newText += text;
     return newText;
   }    
 }
