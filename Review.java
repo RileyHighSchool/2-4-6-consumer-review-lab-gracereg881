@@ -270,14 +270,19 @@ public static String fakeReview(String fileName, String posNeg)
 
       String beforeK = text.substring(0, kLoc);
 
+      String afterK = text.substring(kLoc + 1);
+
       newText += beforeK;
+      System.out.println("beforeK:" + beforeK);
+
       // check if text is "k + something", change to okay + something
       if (isK.equals("k "))
       {
         newText += "okay ";
+        System.out.println("newText:" + newText);
       }
       else {
-        newText += isK;
+        newText += afterK;
       }
 
       text = text.substring(kLoc);
