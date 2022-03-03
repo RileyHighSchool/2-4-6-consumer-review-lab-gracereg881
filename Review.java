@@ -271,7 +271,7 @@ public static String fakeReview(String fileName, String posNeg)
       String beforeK = text.substring(0, kLoc);
 
       String afterK = text.substring(kLoc + 1);
-      System.out.println("afterK: " + afterK);
+      //System.out.println("afterK: " + afterK);
 
       //newText += beforeK;
       //System.out.println("beforeK:" + beforeK);
@@ -280,12 +280,15 @@ public static String fakeReview(String fileName, String posNeg)
       if (isK.equals("k "))
       {
         newText += beforeK;
-        System.out.println("beforeK:" + beforeK);
+        //System.out.println("beforeK:" + beforeK);
+        //System.out.println("new text: " + newText);
         newText += "okay ";
-        System.out.println("newText:" + newText);
+        //System.out.println("newText:" + newText);
+        newText += afterK;
       }
       else {
         newText += afterK;
+        //System.out.println("new text: " + newText);
       }
 
       text = text.substring(kLoc);
@@ -293,7 +296,7 @@ public static String fakeReview(String fileName, String posNeg)
     // if not, keep orginal text
     }
 
-    newText += text;
+    //newText += text;
     return newText;
   }    
 }
